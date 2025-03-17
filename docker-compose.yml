@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  clarityfuzzer:
+    build: .
+    container_name: clarityfuzzer
+    volumes:
+      - ./ClarityFuzzer:/app/ClarityFuzzer
+    command: ["python", "/app/ClarityFuzzer/ClarityTranspiler/ClarityTranspiler.py", "/app/ClarityFuzzer/example.clar"]
+
+  yarara-dashboard-bff:
+    image: node:20
+    container_name: yarara-dashboard-bff
+    working_dir: /app/yarara-fe/yarara-dashboard-bff
+    volumes:
+      - ./yarara-fe:/app/yarara-fe
+    ports:
+      - "5000:5000"
+    command: ["sh", "-c", "npm install && node server.js"]
+
+  yarara-dashboard:
+    image: node:20
+    container_name: yarara-dashboard
+    working_dir: /app/yarara-fe/yarara-dashboard
+    volumes:
+      - ./yarara-fe:/app/yarara-fe
+    ports:
+      - "3000:3000"
+    command: ["sh", "-c", "npm install && npm run dev"]
