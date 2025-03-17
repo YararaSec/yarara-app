@@ -1,0 +1,40 @@
+{
+  "output": {
+    "assertBlockHeight": {
+      "columns": [
+        { "name": "file", "kind": "String" },
+        { "name": "start", "kind": "String" },
+        { "name": "end", "kind": "String" },
+        { "name": "message", "kind": "String" },
+        { "name": "recommendation", "kind": "String" }
+      ],
+      "tuples": [
+        [
+          "examples/assertBlockHeight.clar",
+          "6:3",
+          "6:71",
+          "Use of block-height inside a assert.",
+          "Consider using burn-block-height."
+        ]
+      ]
+    },
+    "callInsideAsContract": {
+      "columns": [
+        { "name": "file", "kind": "String" },
+        { "name": "start", "kind": "String" },
+        { "name": "end", "kind": "String" },
+        { "name": "message", "kind": "String" },
+        { "name": "recommendation", "kind": "String" }
+      ],
+      "tuples": [
+        [
+          "examples/callInsideAsContract.clar",
+          "2:11",
+          "2:63",
+          "Use of call-contract? inside an as-contract context.",
+          ""
+        ]
+      ]
+    }
+  }
+}
