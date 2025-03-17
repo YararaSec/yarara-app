@@ -20,8 +20,12 @@ npm run -dev
 ```
 
 The dashboard will be in `http://localhost:3000/dashboard`.
+The dashboard will be running in `http://localhost:5000`.
 
 Once setup and running, you may use your Github account to log in. Then select a repository that has Clarity contracts inside, and start your analysis!
+
+## Dashboard Backend Integration
+The dashboard is connected to a Node.js backend responsible for persisting information related to the history of projects and scans associated with the user's repositories. The primary objective is to enable the eventual reconstruction of failure corrections, as each scanning process is performed on the version of the code present in the repository's main branch at the time the scan is requested.
 
 ## AI Assistant (experimental)
 We are using ollama to integrate an LLM as an assistant and aggregator: the output of both CodeQL and the fuzzer are different and may not be easy to interpret, so we use `Mistral 7B` as our LLM of choice to help the user in understanding and leveraging the output of the tools. We are still crafting our prompts for the fuzzer, but here is an example of the CodeQL prompt:
