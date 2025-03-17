@@ -61,6 +61,7 @@ Here is an example of the kind of output the AI assistant produces:
 We have a server that takes the output of CodeQL and the fuzzer in `/codeql` and `/fuzzing` respectively, runs it through `Mistral` and relays the output to the frontend. 
 
 ## Upcoming features
+- A site for submitting and sharing prompts, and community benchmarks of success rates on fixes.
 - A model selector, alongside benchmarks for each supported model
 - AI assisted custom query creation for ClarityQL
 - AI assisted custom property check creation for ClarityFuzzer
